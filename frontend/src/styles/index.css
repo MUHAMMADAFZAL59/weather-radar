@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for Leaflet map */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Ensure the map takes full height */
+.leaflet-container {
+  z-index: 1;
+}
+
+/* Custom loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .leaflet-control-container .leaflet-routing-container-hide {
+    display: none;
+  }
+}
+
+/* Radar overlay opacity adjustments */
+.leaflet-image-layer {
+  mix-blend-mode: multiply;
+  filter: contrast(1.2) brightness(1.1);
+}
